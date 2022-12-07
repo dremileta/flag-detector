@@ -12,18 +12,21 @@ export interface RawCountry {
   ccn3: string;
   cca3: string;
   cioc: string;
+
   independent: boolean | null;
   status: string;
   unMember: boolean;
-
   currencies: Record<string, { name: string; symbol: string }>;
+
   idd: Record<string, unknown>;
+
   capital: string[];
   altSpellings: string[];
   region: string;
   subregion: string;
   languages: Record<string, unknown>;
   translations: Record<string, unknown>;
+
   latlng: [number, number];
   landlocked: boolean;
   borders: string[];

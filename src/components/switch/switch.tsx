@@ -1,6 +1,6 @@
 import { MouseEvent, ReactNode, useCallback, useState } from 'react';
 
-export type SwitchProps = {
+type SwitchProps = {
   className?: string;
   initialState?: boolean;
   iconsSet?: [string | ReactNode, string | ReactNode];

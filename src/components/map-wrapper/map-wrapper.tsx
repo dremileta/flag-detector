@@ -2,26 +2,23 @@ import { Status, Wrapper } from '@googlemaps/react-wrapper';
 
 import { Map } from '../map/map';
 
-export type MapProps = {
-  zoomLevel?: number;
+/**
+ * @param className - passed to Map component to be able to apply styles on it
+ * since GoogleMap Wrapper component doesn't render itself, and used only
+ * for initialization of the map
+ */
+type MapWrapperProps = {
   className?: string;
-};
-
-export type MapWrapperProps = {
   zoomLevel?: number;
-  className?: string;
 };
 
 export const MapWrapper = ({
   className = "",
-  // location,
   zoomLevel = 6,
 }: MapWrapperProps) => {
   const render = (status: Status) => {
     return <h1>{status}</h1>;
   };
-
-  console.log("MAP WRAPPER RENDER", []);
 
   return (
     <Wrapper apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY} render={render}>

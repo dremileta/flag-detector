@@ -4,6 +4,7 @@ import { useSelectedCountryContextAPI } from '../../context/selected-country.con
 import { Country } from '../../types/country';
 import { CountryListItem } from '../country-list-item/country-list-item';
 import { CountryListSearch } from '../country-list-search/country-list-search';
+import { Text } from '../text/text';
 
 interface CountryListProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -33,15 +34,19 @@ export const CountryList = ({
         searchTerm={searchTerm}
         onSearchTermChange={setSearchTerm}
       />
-      <div className="flex flex-col gap-4 overflow-auto">
-        {filteredCountries.map((country) => (
-          <CountryListItem
-            key={country.id}
-            width={itemWidth}
-            country={country}
-            onItemClick={onCountryChange}
-          />
-        ))}
+      <div className="flex flex-col items-center gap-4 overflow-auto">
+        {filteredCountries?.length ? (
+          filteredCountries.map((country) => (
+            <CountryListItem
+              key={country.id}
+              width={itemWidth}
+              country={country}
+              onItemClick={onCountryChange}
+            />
+          ))
+        ) : (
+          <Text>No Country Found</Text>
+        )}
       </div>
     </div>
   );

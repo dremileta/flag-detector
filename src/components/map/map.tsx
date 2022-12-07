@@ -2,7 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useSelectedCountryContext } from '../../context/selected-country.context';
 import { useDeepCompareEffectForMaps } from '../../hooks/useDeepCompareEffectForMaps';
-import { MapProps } from '../map-wrapper/map-wrapper';
+
+/**
+ * @param className - applies to 'div' wrapper
+ */
+type MapProps = {
+  className?: string;
+  zoomLevel: number;
+};
 
 export const Map = ({ className = "", zoomLevel }: MapProps) => {
   const ref = useRef<HTMLDivElement>(null);
