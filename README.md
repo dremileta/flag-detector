@@ -7,6 +7,12 @@ npm install
 npm run dev
 ```
 
+## TODO
+- [ ] Research how to add TensorFlow.js library to work with React;  
+- [ ] Research how to teach TensorFlow AI to recognize country flags;  
+- [ ] Set up Tensorflow;  
+- [ ] Teach TensorFlow with country flags; Can use dataset from [here](https://github.com/iamvukasin/flagnet/tree/master/dataset) if needed. 
+
 ## Used approaches
 
 ### Context API
